@@ -1,15 +1,13 @@
 import React from 'react';
+import './Form.css';
 
 const formComp = (props) => {
     return (
-        <div>
+        <div className="Form">
             <form>
-                <label>Store Name:</label>
-                <input type='text' />
-                <label>Location:</label>
-                <input type='text' />
-                <label>Size:</label>
-                <input type='text' />
+                <label className="Field">Store Name:</label><input type='text'value={props.storename}/><br />
+                <label className="Field">Location:</label><input type='text' value={props.location}/><br />
+                <label className="Field">Size:</label><input type='text' value={props.size}/>
             </form>
         </div>
     )

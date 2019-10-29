@@ -1,3 +1,17 @@
 .App {
   text-align: center;
 }
+
+.Spacing {
+  padding-top: 50px;
+  padding: 25px 20px 25px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  height: auto;
+}
+
+.NavBar {
+  background-color: aquamarine;
+  height: 75px;
+}

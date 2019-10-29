@@ -3,13 +3,21 @@ import './App.css';
 import FormComp from './Forms/Form.js'
 
 class App extends Component {
-  
+  state = {
+    storename: 'AWS',
+    location: 'North Virgnia',
+    size: '3 Zones'
+  }
 
   render() {
     return (
-      <div className="App">
-        <h1>Stores</h1>
-        <FormComp />
+      <div>
+        <div className="NavBar App">
+          <a href="#" className="Spacing">Store Listing</a>
+          <a href="#"className="Spacing">Add Store</a>
+        </div>
+        <h1 className="App">Stores</h1>
+        <FormComp storename={this.state.storename} location={this.state.location} size={this.state.size}/>
       </div>
     );
 
