@@ -4,10 +4,29 @@ import FormComp from './Forms/Form.js'
 
 class App extends Component {
   state = {
-    storename: 'AWS',
-    location: 'North Virgnia',
-    size: '3 Zones'
+    stores: [
+      {id: '01', storename: 'Walmart', country: 'United States', city: 'Wake Forest', state: 'NC'},
+      {id: '02', storename: 'Nike', country: 'United States', city: 'Brooklyn', state: 'NY'},
+      {id: '03', storename: 'Harris Teeter', country: 'United States', city: 'Norfolk', state: 'VA'},
+      {id: '04', storename: 'Lowes', country: 'United States', city: 'NashVille', state: 'TN'}
+
+    ]
   }
+
+  renderTableData() {
+    return this.state.stores.map((store, index) => {
+       const { id, storename, country, city, state} = store 
+       return (
+          <tr key={id}>
+             <td>{id}</td>
+             <td>{storename}</td>
+             <td>{city}</td>
+             <td>{state}</td>
+             <td>{country}</td>
+          </tr>
+       )
+    })
+ }
 
   render() {
     return (
@@ -17,7 +36,11 @@ class App extends Component {
           <a href="#"className="Spacing">Add Store</a>
         </div>
         <h1 className="App">Stores</h1>
-        <FormComp storename={this.state.storename} location={this.state.location} size={this.state.size}/>
+        <table id='stores'>
+          <tbody>
+            {this.renderTableData()}
+          </tbody>
+        </table>
       </div>
     );
 
@@ -26,3 +49,4 @@ class App extends Component {
 }
 
 export default App;
+
