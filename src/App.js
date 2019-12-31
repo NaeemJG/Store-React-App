@@ -5,10 +5,10 @@ import FormComp from './Forms/Form.js'
 class App extends Component {
   state = {
     stores: [
-      {id: '01', storename: 'Walmart', country: 'United States', city: 'Wake Forest', state: 'NC'},
-      {id: '02', storename: 'Nike', country: 'United States', city: 'Brooklyn', state: 'NY'},
-      {id: '03', storename: 'Harris Teeter', country: 'United States', city: 'Norfolk', state: 'VA'},
-      {id: '04', storename: 'Lowes', country: 'United States', city: 'NashVille', state: 'TN'}
+      {id: '1', storename: 'Walmart', country: 'United States', city: 'Wake Forest', state: 'NC'},
+      {id: '2', storename: 'Nike', country: 'United States', city: 'Brooklyn', state: 'NY'},
+      {id: '3', storename: 'Harris Teeter', country: 'United States', city: 'Norfolk', state: 'VA'},
+      {id: '4', storename: 'Lowes', country: 'United States', city: 'NashVille', state: 'TN'}
 
     ]
   }
@@ -27,6 +27,13 @@ class App extends Component {
        )
     })
  }
+ 
+ renderTableHeader() {
+  let header = Object.keys(this.state.stores[0])
+  return header.map((key, index) => {
+     return <th key={index}>{key.toUpperCase()}</th>
+  })
+}
 
   render() {
     return (
@@ -38,6 +45,7 @@ class App extends Component {
         <h1 className="App">Stores</h1>
         <table id='stores'>
           <tbody>
+            <tr>{this.renderTableHeader()}</tr>
             {this.renderTableData()}
           </tbody>
         </table>
