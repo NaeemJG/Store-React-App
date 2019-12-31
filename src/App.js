@@ -5,17 +5,17 @@ import FormComp from './Forms/Form.js'
 class App extends Component {
   state = {
     stores: [
-      {id: '1', storename: 'Walmart', country: 'United States', city: 'Wake Forest', state: 'NC'},
-      {id: '2', storename: 'Nike', country: 'United States', city: 'Brooklyn', state: 'NY'},
-      {id: '3', storename: 'Harris Teeter', country: 'United States', city: 'Norfolk', state: 'VA'},
-      {id: '4', storename: 'Lowes', country: 'United States', city: 'NashVille', state: 'TN'}
+      {id: '1', storename: 'Walmart', city: 'Wake Forest', state: 'NC',country: 'United States',},
+      {id: '2', storename: 'Nikey', city: 'Brooklyn', state: 'NY', country: 'United States',},
+      {id: '3', storename: 'Harris Teeter', city: 'Norfolk', state: 'VA', country: 'United States',},
+      {id: '4', storename: 'Lowes', city: 'NashVille', state: 'TN', country: 'United States',}
 
     ]
   }
 
   renderTableData() {
     return this.state.stores.map((store, index) => {
-       const { id, storename, country, city, state} = store 
+       const { id, storename, city, state, country} = store 
        return (
           <tr key={id}>
              <td>{id}</td>
@@ -43,7 +43,7 @@ class App extends Component {
           <a href="#"className="Spacing">Add Store</a>
         </div>
         <h1 className="App">Stores</h1>
-        <table id='stores'>
+        <table id="stores">
           <tbody>
             <tr>{this.renderTableHeader()}</tr>
             {this.renderTableData()}
